@@ -2,10 +2,11 @@ function add(n1: number, n2: number, showResult: boolean, phrase: string) {
   // if (typeof n1 !== 'number' || typeof n2 !== 'number') {
   //   throw new Error('不正な入力値');
   // }
+  const result = n1 + n2;
   if (showResult) {
-    console.log(phrase + n1 + n2);
+    console.log(phrase + result);
   } else {
-    return n1 + n2;
+    return result;
   }
 }
 
