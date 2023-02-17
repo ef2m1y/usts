@@ -1,46 +1,15 @@
-// const person: {
-//     name: string;
-//     age: number;
-// }
-// const person: {
-//   name: string;
-//   age: number;
-//   hobbies: string[];
-//   role: [number, string];
-// } = {
-//   name: "hoge",
-//   age: 30,
-//   hobbies: ["tennis", "kyudo"],
-//   role: [2, "author"],
-// };
-
-enum Role {
-  ADMIN,
-  READ_ONLY,
-  AUTHOR,
+function conbine(input1: number | string, input2: number | string) {
+  let result;
+  if (typeof input1 === 'number' && typeof input2 === 'number') {
+    result = input1 + input2;
+  } else {
+    result = input1.toString() + input2.toString();
+  }
+  return result;
 }
 
-const person = {
-  name: "hoge",
-  age: 30,
-  hobbies: ["tennis", "kyudo"],
-  role: Role.ADMIN,
-};
+const conbinedAges = conbine(20, 30);
+console.log(conbinedAges);
 
-// person.role.push("admin"); // pushはtupleでも防げない!
-// person.role[1] = 10; // err
-// person.role = [0, 'admin', 'user']; // err
-
-let favoirteActivities: string[];
-favoirteActivities = ["tennis"];
-
-console.log(person);
-
-for (const hobby of person.hobbies) {
-  console.log(hobby.toUpperCase());
-  // console.log(hobby.map());
-}
-
-if (person.role === Role.ADMIN) {
-    console.log('管理者ユーザ');
-}
+const conbinedNames = conbine("Ema", "Bob");
+console.log(conbinedNames);
