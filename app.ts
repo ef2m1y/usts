@@ -1,7 +1,10 @@
-function conbine(
-  input1: number | string,
-  input2: number | string,
-  resultConversion: "as-number" | "as-text"
+type Combinable = number | string;
+type ConversionDescriptor = "as-number" | "as-text";
+
+function combine(
+  input1: Combinable,
+  input2: Combinable,
+  resultConversion: ConversionDescriptor
 ) {
   let result;
   if (
@@ -15,11 +18,11 @@ function conbine(
   return result;
 }
 
-const conbinedAges = conbine(20, 30, "as-number");
+const conbinedAges = combine(20, 30, "as-number");
 console.log(conbinedAges);
 
-const conbinedStringAges = conbine("20", "30", "as-number");
+const conbinedStringAges = combine("20", "30", "as-number");
 console.log(conbinedAges);
 
-const conbinedNames = conbine("Ema", "Bob", "as-text");
+const conbinedNames = combine("Ema", "Bob", "as-text");
 console.log(conbinedNames);
