@@ -6,8 +6,19 @@ let userInput: unknown;
 let userName: string;
 
 userInput = 5;
-userInput = 'Max';
+userInput = "Max";
 
-if (typeof userInput === 'string') {
-    userName = userInput;
+if (typeof userInput === "string") {
+  userName = userInput;
 }
+
+// - void: なにも返さないつもり
+// - never: 絶対に返り値を返さない
+
+function generateError(message: string, code: number): never {
+  throw { message, code }; // crash
+  // while (true) {} // 無限ループ
+}
+
+const result = generateError("errorが発生しました", 500);
+console.log(result);

@@ -5,7 +5,15 @@
 var userInput;
 var userName;
 userInput = 5;
-userInput = 'Max';
-if (typeof userInput === 'string') {
+userInput = "Max";
+if (typeof userInput === "string") {
     userName = userInput;
 }
+// - void: なにも返さないつもり
+// - never: 絶対に返り値を返さない
+function generateError(message, code) {
+    throw { message: message, code: code }; // crash
+    // while (true) {} // 無限ループ
+}
+var result = generateError("errorが発生しました", 500);
+console.log(result);
